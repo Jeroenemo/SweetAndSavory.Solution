@@ -1,3 +1,8 @@
+body {
+  background-image: url("../img/pastry.jpeg");
+  background-repeat: repeat;
+}
+
 div#footer {
   position:fixed;
   bottom:0px;
