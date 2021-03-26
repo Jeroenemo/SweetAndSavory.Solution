@@ -14,7 +14,7 @@ namespace SweetAndSavory.Controllers
     }
     public ActionResult Index()
     {
-      List<Tag> model = _db.Tags.ToList();
+      List<Flavor> model = _db.Flavors.ToList();
       return View(model);
     }
   }
