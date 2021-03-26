@@ -87,7 +87,7 @@ namespace SweetAndSavory.Controllers
     }
 
     [Authorize]
-    public ActionResult AddTreat(int id)
+    public ActionResult AddFlavor(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
@@ -95,11 +95,11 @@ namespace SweetAndSavory.Controllers
     }
 
     [HttpPost]
-    public ActionResult AddTreat(Flavor flavor, int TreatId)
+    public ActionResult AddFlavor(Treat treat, int FlavorId)
     {
-      if (TreatId != 0)
+      if (FlavorId != 0)
       {
-      _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+      _db.TreatFlavor.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = treat.TreatId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
