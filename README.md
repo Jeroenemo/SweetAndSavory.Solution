@@ -50,9 +50,9 @@ This is a basic application designed to display my grasp on databases and user a
 * Click Start Import
 * Reopen the Navigator > Schemas tab. Right click and select Refresh All. 
 
-*Alternatively, install the enitity framework migrations tool by running the following comand `dotnet tool install --global dotnet-ef`
-*In SweetAndSavory.Solution > SweetAndSavory, run `dotnet ef database update`
-*Voila! 
+* Alternatively, install the enitity framework migrations tool by running the following comand `dotnet tool install --global dotnet-ef`
+* In SweetAndSavory.Solution > SweetAndSavory, run `dotnet ef database update`
+* Voila! 
 
 **Run the Application**
 * Back in your terminal, in the SweetAndSavory.Solution > SweetAndSavory directory, type `dotnet run`
