@@ -5,10 +5,16 @@
 @model SweetAndSavory.Models.Flavor
 
 <div class="header">Add a new flavor</div>
+
+<hr>
+
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name, new { required = "required" })
-    <input type="submit" value="Add new flavor" />
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { required = "required" })
+  <input type="submit" value="Add new flavor" />
 }
-<p>@Html.ActionLink("Show all flavors", "Index")</p>
+
+<table>
+  <td>@Html.ActionLink("Show all flavors", "Index")</td>
+</table>

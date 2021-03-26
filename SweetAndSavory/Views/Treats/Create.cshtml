@@ -6,10 +6,15 @@
 
 <div class="header">Add a new Treat</div>
 
+<hr>
+
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name, new { required = "required" })
-    <input type="submit" value="Add new treat" />
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name, new { required = "required" })
+  <input type="submit" value="Add new treat" />
 }
-<p>@Html.ActionLink("Show all treats", "Index")</p>
+
+<table>
+  <td>@Html.ActionLink("Show all treats", "Index")</td>
+</table>

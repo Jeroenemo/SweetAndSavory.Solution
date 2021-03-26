@@ -36,5 +36,12 @@ table{
   margin: auto;
 }
 .jumbotron {
+  text-align: center;
   margin: auto;
+  margin-top: 10vh;
+}
+
+.form-group {
+  margin: 0 auto;
+  justify-content: center;
 }
