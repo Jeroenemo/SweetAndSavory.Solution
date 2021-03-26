@@ -35,12 +35,12 @@ namespace SweetAndSavory.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult> Create(Flavor flavor)
+    public async Task<ActionResult> Create(Treat treat)
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      flavor.User = currentUser;
-      _db.Flavors.Add(flavor);
+      treat.User = currentUser;
+      _db.Treats.Add(treat);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
