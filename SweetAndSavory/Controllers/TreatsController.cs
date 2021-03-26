@@ -47,11 +47,11 @@ namespace SweetAndSavory.Controllers
 
     public ActionResult Details(int id)
     {
-      var thisFlavor = _db.Flavors
-        .Include(flavor => flavor.JoinEntities)
+      var thisTreat = _db.Treats
+        .Include(treat => treat.JoinEntities)
         .ThenInclude(join => join.Treat)
-        .FirstOrDefault(flavor => flavor.FlavorId == id);
-      return View(thisFlavor);
+        .FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
     }
 
     [Authorize]
