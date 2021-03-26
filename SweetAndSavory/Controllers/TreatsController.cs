@@ -63,9 +63,9 @@ namespace SweetAndSavory.Controllers
     }
 
     [HttpPost]
-    public ActionResult Edit(Flavor flavor, int TreatId)
+    public ActionResult Edit(Treat treat, int FlavorId)
     {
-      _db.Entry(flavor).State = EntityState.Modified;
+      _db.Entry(treat).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
