@@ -73,8 +73,8 @@ namespace SweetAndSavory.Controllers
     [Authorize]
     public ActionResult Delete(int id)
     {
-      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
-      return View(thisFlavor);
+      var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
     }
 
     [HttpPost, ActionName("Delete")]
