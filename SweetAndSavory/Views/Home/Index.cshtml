@@ -2,10 +2,13 @@
   Layout = "_Layout";
 }
 
-<div class="header">Welcome Pierre's Sweet and Savory Shop!</div>
+<div class="header">Pierre's Sweet and Savory Shop!</div>
+<table>
+<tr>
+<td>@Html.ActionLink("See all flavors", "Index", "Flavors") | </td> 
 
-<p>@Html.ActionLink("See all flavors", "Index", "Flavors")</p>
+<td>@Html.ActionLink("See all treats", "Index", "Treats") | </td> 
 
-<p>@Html.ActionLink("See all treats", "Index", "Treats")</p> 
-
-<p>@Html.ActionLink("Create an account", "Index", "Account")</p>
+<td>@Html.ActionLink("Create an account", "Index", "Account")</td>
+</tr>
+</table>

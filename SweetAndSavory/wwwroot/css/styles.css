@@ -26,7 +26,9 @@ a:hover {
   font-family: 'Frijole', cursive;
   font-size: 30px;
 }
-
+table{
+  margin: auto;
+}
 .jumbotron {
   margin: auto;
 }
