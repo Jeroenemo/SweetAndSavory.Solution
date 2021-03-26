@@ -14,9 +14,11 @@ namespace SweetAndSavory.Controllers
   public class FlavorsController : Controller
   {
     private readonly SweetAndSavoryContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public FlavorsController(SweetAndSavoryContext db)
+    public FlavorsController(UserManager<ApplicationUser> userManager, SweetAndSavoryContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
@@ -30,6 +32,17 @@ namespace SweetAndSavory.Controllers
     public ActionResult Create()
     {
       return View();
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Create(Flavor flavor)
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      flavor.User = currentUser;
+      _db.Flavors.Add(flavor);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
