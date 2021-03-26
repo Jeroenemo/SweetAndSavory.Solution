@@ -7,7 +7,13 @@
 
 <div class="header">Treats!</div>
 
-@if (Model.Any())
+<hr>
+
+@if (!Model.Any())
+{
+  <h3>No treats have been added yet!</h3>
+}
+else
 {
   <ul>
     @foreach (Treat treat in Model)
@@ -16,11 +22,11 @@
     }
   </ul>
 } 
-else
-{
-  <h3>No treats have been added yet!</h3>
-}
 
-<p>@Html.ActionLink("Add new treat", "Create")</p>
+<table>
+  <tr>
+    <td>@Html.ActionLink("Add new treat", "Create") | </td>
 
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+    <td>@Html.ActionLink("Home", "Index", "Home")</td>
+  </tr>
+</table>

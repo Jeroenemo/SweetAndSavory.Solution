@@ -7,17 +7,26 @@
 
 <div class="header">Flavors!</div>
 
-@if (@Model.Any())
+<hr>
+
+@if (!@Model.Any())
 {
   <h3>No flavors have been added yet!</h3>
 } 
-
+else
+{
 <ul>
   @foreach(Flavor flavor in Model)
   {
     <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
   }
 </ul>
+}
 
-<p>@Html.ActionLink("Add new flavor", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<table>
+  <tr>
+    <td>@Html.ActionLink("Add new flavor", "Create") | </td>
+
+    <td>@Html.ActionLink("Home", "Index", "Home")</td>
+  </tr>
+</table>
